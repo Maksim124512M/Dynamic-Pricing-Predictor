@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from src.pipeline import build_pipeline
 
 from sklearn.pipeline import Pipeline
