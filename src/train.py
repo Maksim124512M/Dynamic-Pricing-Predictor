@@ -2,8 +2,8 @@ import mlflow
 import joblib
 import pandas as pd
 
-from pipeline import build_pipeline
-from config import MLFLOW_MONITORING_CONFIG
+from src.pipeline import build_pipeline
+from src.config import MLFLOW_MONITORING_CONFIG
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import root_mean_squared_error, mean_absolute_error
@@ -43,12 +43,12 @@ def train():
     joblib.dump(train_components['grid'], 'models/revenue_grid.pkl')
 
     with mlflow.start_run():
-        mlflow.sklearn.log_model(train_components['pipeline'], 'linear_regression_pipeline')
-        mlflow.sklearn.log_model(train_components['grid'], 'random_forest_pipeline')
+        mlflow.sklearn.log_model(train_components['pipeline'], name='linear_regression_pipeline')
+        mlflow.sklearn.log_model(train_components['grid'], name='random_forest_pipeline')
 
         mlflow.log_params({
-            'rf_n_estimators': train_components['grid'].best_estimator_.named_steps_['random_forest'].n_estimators,
-            'rf_max_depth': train_components['grid'].best_estimator_.named_steps_['random_forest'].max_depth,
+            'rf_n_estimators': train_components['grid'].best_estimator_.named_steps['random_forest'].n_estimators,
+            'rf_max_depth': train_components['grid'].best_estimator_.named_steps['random_forest'].max_depth,
         })
 
         mlflow.log_metrics({
