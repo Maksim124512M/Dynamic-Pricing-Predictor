@@ -29,14 +29,16 @@ async def predict_endpoint(data: InputData) -> dict:
     Make revenue predictions using trained models.
     '''
 
-    df = pd.DataFrame([data.dict()])
+    payload = data.model_dump()
+
+    df = pd.DataFrame([payload])
 
     predictions = predict(df)
 
     with mlflow.start_run():
-        mlflow.log_dict([data.dict()], 'Data from user')
+        mlflow.log_dict(payload, 'Data from user')
 
     return {
         'revenue_next_7d_by_linear_regression': float(predictions['pipeline_prediction'][0]),
-        'revenue next_7d_by_random_forest': float(predictions['grid_prediction'][0]),
+        'revenue_next_7d_by_random_forest': float(predictions['grid_prediction'][0]),
     }
