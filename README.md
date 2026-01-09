@@ -3,6 +3,10 @@
 ## Overview
 A system for dynamic pricing algorithms and implementation.
 
+## 🔗 Live Links
+- Live API: https://dynamic-pricing-predictor.onrender.com/predict
+- API Docs (Swagger): https://dynamic-pricing-predictor.onrender.com/docs
+
 ## Features
 - Real-time price adjustment
 - Market analysis
