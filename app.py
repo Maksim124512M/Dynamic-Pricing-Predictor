@@ -7,6 +7,7 @@ from pydantic import BaseModel
 
 from src.inference import predict
 from src.config import MLFLOW_MONITORING_CONFIG
+from src.train import train
 
 mlflow.set_tracking_uri(MLFLOW_MONITORING_CONFIG['tracking_uri'])
 mlflow.set_experiment(MLFLOW_MONITORING_CONFIG['experiment_name'])
