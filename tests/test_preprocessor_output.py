@@ -1,9 +1,8 @@
 import numpy as np
 import pandas as pd
-
 from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import FunctionTransformer, OneHotEncoder
 
-from sklearn.preprocessing import OneHotEncoder, FunctionTransformer
 
 def test_preprocessor_output_shape():
     log_transformer = FunctionTransformer(

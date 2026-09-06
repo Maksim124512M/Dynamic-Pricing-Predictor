@@ -1,8 +1,8 @@
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
 from src.pipeline import build_pipeline
 
-from sklearn.model_selection import train_test_split
 
 def test_unknown_category():
     df = pd.read_csv('data/products.csv')

@@ -1,11 +1,11 @@
 import numpy as np
-
-from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
-from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.preprocessing import OneHotEncoder, FunctionTransformer
+from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import GridSearchCV
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import FunctionTransformer, OneHotEncoder
+
 
 def build_pipeline():
     '''

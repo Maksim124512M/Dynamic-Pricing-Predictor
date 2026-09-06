@@ -1,6 +1,5 @@
 import joblib
 
-
 pipeline = joblib.load('models/revenue_pipeline.pkl')
 grid = joblib.load('models/revenue_grid.pkl')
 

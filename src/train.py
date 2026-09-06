@@ -1,12 +1,11 @@
-import mlflow
 import joblib
+import mlflow
 import pandas as pd
-
-from src.pipeline import build_pipeline
-from src.config import MLFLOW_MONITORING_CONFIG
-
+from sklearn.metrics import mean_absolute_error, root_mean_squared_error
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import root_mean_squared_error, mean_absolute_error
+
+from src.config import MLFLOW_MONITORING_CONFIG
+from src.pipeline import build_pipeline
 
 mlflow.set_tracking_uri(MLFLOW_MONITORING_CONFIG['tracking_uri'])
 mlflow.set_experiment(MLFLOW_MONITORING_CONFIG['experiment_name'])

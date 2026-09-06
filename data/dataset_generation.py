@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-
 n = 5000
 
 df = pd.DataFrame({

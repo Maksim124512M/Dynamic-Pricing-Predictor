@@ -2,6 +2,7 @@ import pandas as pd
 
 from src.pipeline import build_pipeline
 
+
 def test_gridsearch_runs():
     df = pd.read_csv('data/products.csv')
 

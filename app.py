@@ -1,12 +1,10 @@
 import mlflow
 import pandas as pd
-
 from fastapi import FastAPI
-
 from pydantic import BaseModel
 
-from src.inference import predict
 from src.config import MLFLOW_MONITORING_CONFIG
+from src.inference import predict
 from src.train import train
 
 mlflow.set_tracking_uri(MLFLOW_MONITORING_CONFIG['tracking_uri'])
